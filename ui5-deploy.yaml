@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "3.1"
+metadata:
+  name: re.airline
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          url: https://vhaztds4ci.sap.aboitizinfracapital.com:44300/
+          client: '501'
+        app:
+          name: ZAEROREGISTRY
+          description: Airline Registry app
+          package: ZRE_AODB_CONFIGURATION
+          transport: DS4K913062
+        exclude:
+          - /test/
