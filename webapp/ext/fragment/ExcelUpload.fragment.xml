@@ -1,0 +1,22 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified" xmlns:upload="sap.m.upload">
+	<Dialog id="uploadDialogSet" title="Excel Upload">
+        <content>
+            <upload:UploadSet uploadEnabled="true" id="uploadSet" instantUpload="true" fileTypes="xlsx, xls" maxFileNameLength="200" beforeUploadStarts="onBeforeUploadStart" uploadCompleted="onUploadSetComplete" afterItemRemoved="onItemRemoved"
+            terminationEnabled="true">
+                <upload:UploadSetItem id="uploadSetItem" visibleRemove="true" visibleEdit="false" fileName="{name}" url="/upload">
+                    <upload:attributes>
+                        <ObjectAttribute id="uploadAttr1" title="Uploaded by" text="{user}" active="false"/>
+                    </upload:attributes>
+                </upload:UploadSetItem>
+            </upload:UploadSet>
+        </content>
+        <buttons>        
+            <Button id="btnTemplate" text="Template" press=".onTemplateDownload" icon="sap-icon://download-from-cloud" type="Emphasized"/>
+            <Button id="btnUpload" text="Upload" press=".onUploadSet" icon="sap-icon://upload-to-cloud" type="Emphasized"/>
+            <Button id="btnCancel" text="Cancel" press=".onCloseDialog" icon="sap-icon://cancel"/>
+        </buttons>
+        <endButton>
+            <Button id="btnOk" text="Ok" press=".onCloseDialog"/>
+        </endButton>    
+	</Dialog>
+</core:FragmentDefinition>

@@ -124,6 +124,15 @@
                 "@com.sap.vocabularies.UI.v1.LineItem": {
                   "tableSettings": {
                     "type": "ResponsiveTable"
+                  },
+                  "actions": {
+                    "Upload": {
+                      "press": ".extension.re.airline.ext.controller.ListReportExt.openExcelUploadDialog",
+                      "visible": true,
+                      "enabled": true,
+                      "requiresSelection": false,
+                      "text": "Upload"
+                    }
                   }
                 }
               }
@@ -139,6 +148,15 @@
               "editableHeaderContent": false,
               "contextPath": "/AeroRegistry"
             }
+          }
+        }
+      }
+    },
+    "extends": {
+      "extensions": {
+        "sap.ui.controllerExtensions": {
+          "sap.fe.templates.ListReport.ListReportController#re.airline::AeroRegistryList": {
+            "controllerName": "re.airline.ext.controller.ListReportExt"
           }
         }
       }
